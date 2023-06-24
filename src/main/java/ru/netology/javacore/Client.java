@@ -19,13 +19,12 @@ public class Client {
             //подключение к серверу
 
 
-                System.out.println("Укажите номер операции и напишите задачу через пробел:" +
-                        "\n" + "1.ADD" +
-                        "\n" + "2.REMOVE");
+            System.out.println("Укажите номер операции и напишите задачу через пробел:" +
+                    "\n" + "1.ADD" +
+                    "\n" + "2.REMOVE");
 
-                writer.println(choiceOfOperationJSON());
-
-
+            writer.println(choiceOfOperationJSON());
+            System.out.println(reader.readLine());
 
 
         } catch (IOException | ParseException e) {
@@ -47,7 +46,7 @@ public class Client {
             operation = "REMOVE";
         }
 
-        String jsonText = "{\"type\": \"" + operation + "\", \"task\": \"" + parts[1] + "\""+"}";
+        String jsonText = "{\"type\": \"" + operation + "\", \"task\": \"" + parts[1] + "\"" + "}";
         System.out.println(jsonText);
 
         return jsonText;

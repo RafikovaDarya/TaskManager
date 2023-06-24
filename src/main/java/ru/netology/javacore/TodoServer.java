@@ -31,10 +31,10 @@ public class TodoServer {
                         PrintWriter out = new PrintWriter(socket.getOutputStream());
                 ) {
                     // обработка одного подключения
-                    System.out.println("Подключен клиент" + socket.getPort());
+                    System.out.println("Подключен клиент " + socket.getPort());
 
                     //парсинг JSON
-                    System.out.println(parsingJSON(in.readLine())); //для демонстрации
+                    out.println(parsingJSON(in.readLine()));
 
                 }
             }
